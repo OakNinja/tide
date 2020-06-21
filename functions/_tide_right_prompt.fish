@@ -1,9 +1,9 @@
 function _tide_right_prompt
-    set -l splitText (_fetch_right_prompt_items | string split '\n')
+    set -l splitText (_fetch_right_prompt_items | string split '@NEWLINE@')
     set -l printAtEndedRightPromptHeight (count $splitText)
 
-    for thing in $splitText[1..-2]
-        _print_at_end $thing
+    for text in $splitText[1..-2]
+        _print_at_end $text
     end
     if test $printAtEndedRightPromptHeight -eq $_tide_left_prompt_height
         set -g _tide_right_prompt_fish $splitText[-1]

@@ -1,3 +1,3 @@
 function _tide_item_newline
-    printf '%s' '\n'
+    printf '%s' '@NEWLINE@'
 end
