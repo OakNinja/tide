@@ -2,7 +2,7 @@ function _tide_left_prompt
     set -l splitText (_fetch_left_prompt_items | string split '@NEWLINE@')
 
     for text in $splitText
-        string replace "$tide_left_prompt_item_separator" "$tide_left_prompt_prefix" "$text$tide_left_prompt_suffix"
+        string replace "$tide_left_prompt_item_separator" "$tide_left_prompt_prefix" "$text"(set_color normal)$tide_left_prompt_suffix
     end
 end
 
