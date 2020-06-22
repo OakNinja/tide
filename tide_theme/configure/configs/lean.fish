@@ -9,12 +9,18 @@ _set fake_tide_prompt_connection_color 6C6C6C
 _set fake_tide_prompt_connection_icon ' '
 
 # --------------------Prompt Items--------------------
+# ------------Left Prompt------------
 _set fake_tide_left_prompt_items 'pwd' 'git_prompt' 'newline' 'prompt_char'
+_set fake_tide_left_prompt_item_separator ' '
+_set fake_tide_left_prompt_prefix ''
+_set fake_tide_left_prompt_suffix ' '
+# ------------Right Prompt------------
 _set fake_tide_right_prompt_items 'status' 'cmd_duration' 'context' 'jobs'
 # ------------Prompt Char------------
 _set fake_tide_prompt_char_success_color $_tide_color_green
 _set fake_tide_prompt_char_failure_color FF0000
 _set fake_tide_prompt_char_icon '❯'
+_set fake_tide_prompt_char_bg_color normal
 # ----------------Pwd----------------
 _set fake_tide_pwd_truncate_margin 10
 _set fake_tide_pwd_unwritable_icon '' # Lock
@@ -23,7 +29,9 @@ _set fake_tide_pwd_anchors 'first' 'last' 'git'
 _set fake_tide_pwd_color_anchors $_tide_color_light_blue
 _set fake_tide_pwd_color_dirs $_tide_color_dark_blue
 _set fake_tide_pwd_color_truncated_dirs 8787AF
+_set fake_tide_pwd_bg_color normal
 # ------------Git prompt------------
+_set fake_tide_git_prompt_bg_color normal
 _set fake___fish_git_prompt_show_informative_status true
 _set fake___fish_git_prompt_showstashstate true
 # -------Symbols-------

@@ -1,21 +1,18 @@
 function _tide_left_prompt
-    set -l splitText (_fetch_left_prompt_items | string split '@NEWLINE@')
-
-    for text in $splitText
-        string replace "$tide_left_prompt_item_separator" "$tide_left_prompt_prefix" "$text"(set_color normal)$tide_left_prompt_suffix
+    for lineOfText in (_fetch_left_prompt_items | string split '@NEWLINE@')
+        string replace $tide_left_prompt_item_separator $tide_left_prompt_prefix $lineOfText(set_color normal)$tide_left_prompt_suffix
     end
 end
 
 function _fetch_left_prompt_items
     for item in $tide_left_prompt_items
-        set -l output (_tide_item_$item)
-        set -l colorName 'tide_'$item'_bg_color'
-
-        set_color -b $$colorName
-
         if test "$item" = 'newline'
-            printf '%s' {$output}
+            printf '%s' '@NEWLINE@'
         else
+            set -l output (_tide_item_$item)
+            set -l colorName 'tide_'$item'_bg_color'
+
+            set_color -b $$colorName
             printf '%s' $tide_left_prompt_item_separator{$output}
         end
     end

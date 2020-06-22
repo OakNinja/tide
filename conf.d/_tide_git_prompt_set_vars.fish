@@ -1,6 +1,6 @@
 function _tide_git_prompt_set_vars -v tide_git_prompt_bg_color
     if test "$tide_git_prompt_bg_color" = 'normal'
-        set color '\e[49m' # Reset only background color
+        set color ''
     else
         set color (set_color -b $tide_git_prompt_bg_color)
     end
